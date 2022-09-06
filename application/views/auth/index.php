@@ -13,19 +13,14 @@
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="<?= base_url('assets/'); ?>/css/font.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets/'); ?>/css/font.min.css" rel="stylesheet">    <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
     <link href="<?= base_url('assets/'); ?>css/custom.css" rel="stylesheet">
 
     <style>
         .bg-login-image {
             background-image: url("<?= base_url('assets/img/bgn.jpg'); ?>");
             background-size: cover;
-            background-position: center;
-            text-align: center;
-            height: 100%;
+            height: 100vh;        
         }
         
         .tembus {
@@ -41,8 +36,7 @@
 <body class="bg-login-image">
 
     <div class="container">
-
-        <!-- Outer Row -->
+      <!-- Outer Row -->
         <div class="row justify-content-center">
 
             <div class="col-xl-10 col-lg-12 col-md-9">
@@ -53,7 +47,7 @@
 
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-5 d-block d-lg-block">
+                            <div class="col-lg-5 d text-center d-lg-block">
                                 <br>
                                 <img src="<?= base_url(); ?>/assets/img/logo.png" width="250px">
                             </div>
@@ -96,8 +90,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-</body>
+      </div></body>
 
 </html>
