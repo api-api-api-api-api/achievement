@@ -12,7 +12,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" type="image/png" href="<?= base_url(); ?>assets/img/logo.png">
+  <link rel="icon" type="image/png" href="<?= base_url(); ?>assets/img/favicon.ico">
   <title><?= $judul; ?></title>
 
   <!-- Custom fonts for this template-->
