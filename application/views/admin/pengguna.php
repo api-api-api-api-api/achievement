@@ -56,6 +56,7 @@
                                             <td><?= $p['nama_divisi']; ?></td>
                                             <td><?= $p['username']; ?></td>
                                             <td>
+                                                <a href="" data-toggle="modal" data-target="#modalPassword" class="btn btn-sm text-white bg-gradient-warning" id="password-pengguna" data-id="<?= $p['id_user']; ?>">Password</a>
                                                 <a href="" data-toggle="modal" data-target="#modalHapus" class="btn btn-sm text-white bg-gradient-danger" id="hapus-pengguna" data-id="<?= $p['id_user']; ?>">Hapus</a>
                                             </td>
                                         </tr>
@@ -114,6 +115,34 @@
     </div>
 </div>
 
+<div class="modal fade" id="modalPassword" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-gradient-info text-white">
+                <h5 class="modal-title">Reset Password</h5> <h5 class="password">
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="<?= base_url('admin/reset_password'); ?>" method="post">
+                <div class="modal-body">
+                    <input type="hidden" name="id" id="id">
+                    <div class="modal-body">
+                        <div class="form-group floating-label-form-group">
+                            <label for="keterangan" class="font-underline"><u>Password</u></label>
+                            <input class="form-control" name="password"></input>
+                        </div>
+                </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn text-white bg-gradient-primary">Simpan</button>
+                    <button type="button" class="btn text-white bg-gradient-danger" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 </div>
 <!-- End of Content Wrapper -->
 
@@ -137,12 +166,13 @@
 
 <script>
     $(document).ready(function() {
-        /*
-            saat user klik tombol hapus dengan id (#hapus-pengguna),
-            isi value dari field yang memiliki class (modal-body) id (id),
-            dengan value dari attribute data-id
-        */
         $(document).on("click", "#hapus-pengguna", function() {
+            $(".modal-body #id").val($(this).data('id'));
+        });
+    });
+
+    $(document).ready(function() {
+        $(document).on("click", "#password-pengguna", function() {
             $(".modal-body #id").val($(this).data('id'));
         });
     });

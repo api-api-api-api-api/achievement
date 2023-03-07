@@ -96,4 +96,9 @@ class Admin extends CI_Controller
         $this->session->set_flashdata('msg', 'dihapus.');
         redirect('data-divisi');
     }
+
+    public function reset_password()
+    {
+        $this->model->resetPassword();
+    }
 }

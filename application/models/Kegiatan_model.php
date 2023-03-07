@@ -253,7 +253,7 @@ class Kegiatan_model extends CI_Model
         }
     }
 
-    public function getkegiatanByDateKadiv($mulai, $selesai, $user = false, $divisi)
+    public function getkegiatanByDateKadiv($mulai, $selesai, $user, $divisi)
     {
         if ($user == false) {
             return $this->db->select('p.*, u.*')

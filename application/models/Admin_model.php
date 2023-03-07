@@ -61,4 +61,17 @@ class Admin_model extends CI_Model
         $this->session->set_flashdata('msg', 'ditambahkan.');
         redirect('data-divisi');
     }
+
+    public function resetPassword()
+    {
+        $id = $this->input->post('id');
+        $password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+        $this->db->set('password', $password);
+        $this->db->where('id_user', $id);
+        $this->db->update('user');
+
+        $this->session->set_flashdata('msg', 'diubah.');
+        redirect('data-pengguna');
+    }
+
 }
